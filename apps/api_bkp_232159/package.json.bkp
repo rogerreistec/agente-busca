@@ -1,0 +1,14 @@
+{
+  "name": "@agente-busca/api",
+  "private": true,
+  "scripts": {
+    "dev": "node ace serve --watch",
+    "build": "node ace build --production",
+    "start": "node build/server.js",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2",
+    "source-map-support": "^0.5.21"
+  }
+}
