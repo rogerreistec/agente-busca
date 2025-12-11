@@ -1,135 +1,225 @@
-# Turborepo starter
+# 🧑‍🔧 Agente Busca — Super App de Serviços
 
-This Turborepo starter is maintained by the Turborepo core team.
+O **Agente Busca** é um super aplicativo projetado para conectar **clientes** a **prestadores de serviço** de forma rápida, inteligente e intuitiva.  
+A plataforma permite criar pedidos, receber orçamentos gratuitos, comparar propostas, acompanhar o serviço e avaliar o profissional — tudo dentro do app.
 
-## Using this example
+Inspirado em modelos como **OLX**, **GetNinjas** e **Uber**, o Agente Busca traz:
+- fluxo completo de orçamento → proposta → execução → finalização  
+- ranking de prestadores baseado em desempenho  
+- categorias organizadas  
+- experiência simples e visual  
 
-Run the following command:
+---
 
-```sh
-npx create-turbo@latest
-```
+## 🚀 Status do Projeto
+**Sprint Atual:** _Preparação do backend (Prisma + Auth + Categorias)_  
+**Progresso:** Ambiente configurado · GitHub OK · Monorepo ativo · Copilot integrado
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
+## ✨ Funcionalidades do MVP
 
-### Apps and Packages
+### 👤 Cliente
+- Cadastro e login  
+- Criar pedidos com descrição e fotos  
+- Receber **pré-orçamentos gratuitos**  
+- Receber propostas detalhadas dos prestadores  
+- Acompanhar o andamento do serviço  
+- Avaliar prestador e serviço
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+### 👨‍🔧 Prestador
+- Cadastro com categorias e raio de atendimento  
+- Receber pedidos compatíveis  
+- Enviar pré-orçamento estilo "Tinder" (aceitar/pular)  
+- Enviar propostas completas  
+- Receber avaliações e subir no ranking  
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### 🧠 Sistema
+- Ranking de prestadores por desempenho  
+- Categorias estilo OLX  
+- Fluxo completo: **requested → matched → scheduled → in_progress → delivered → completed**  
+- Chat simples entre cliente e prestador (MVP)  
+- Histórico de serviços  
+- Autenticação moderna com tokens  
 
-### Utilities
+---
 
-This Turborepo has some additional tools already setup for you:
+## 🛠️ Tecnologias Utilizadas
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+### **Backend**
+- **AdonisJS 6**  
+- **Prisma ORM**  
+- **PostgreSQL**  
+- Autenticação com Tokens  
+- Validação com Zod  
+- MVC + Services  
 
-### Build
+### **Frontend Web**
+- **Next.js 15**  
+- TailwindCSS  
+- TanStack Query  
+- shadcn/UI  
 
-To build all apps and packages, run the following command:
+### **Mobile (Futuro MVP)**
+- Expo / React Native  
+- Expo Router  
+- TanStack Query  
 
-```
-cd my-turborepo
+### **Infra & DevOps**
+- Turborepo (monorepo)  
+- pnpm  
+- Docker (PostgreSQL e serviços)  
+- GitHub Actions  
+- SSH Keys + Versionamento  
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
+---
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
-```
+## 🧱 Arquitetura do Projeto
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+agente-busca/
+├── apps/
+│ ├── api/ → Backend AdonisJS
+│ └── web/ → Frontend Next.js
+├── packages/
+│ ├── ui/ → Componentes compartilhados
+│ ├── types/ → Tipos compartilhados
+│ └── config/ → ESLint, Tailwind, TS configs
+├── infra/
+│ └── docker/ → Banco, redis (futuro)
+├── turbo.json → Configuração Turborepo
+└── README.md
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+yaml
+Copiar código
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+---
 
-### Develop
+## 🗂️ Categorias do Sistema (versão inicial)
 
-To develop all apps and packages, run the following command:
+- 🏗️ Construção e Reforma  
+- 🔌 Eletrônicos e TI  
+- 🧹 Casa e Serviços Gerais  
+- 💅 Beleza e Saúde  
+- 🚗 Automotivo  
+- 🎉 Eventos  
+- 🐕 Pets  
+- 📚 Aulas e Consultorias  
+- 🔧 Outros  
 
-```
-cd my-turborepo
+---
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
+# 📅 Roadmap Oficial (Sprints)
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
+## **Sprint 0 — OK**  
+✔️ Ambiente Linux + VSCode  
+✔️ Git + SSH + GitHub  
+✔️ Turborepo configurado  
+✔️ API e Web rodando  
+✔️ Copilot funcionando
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+---
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
+## **Sprint 1 — Backend Base (Semana Atual)**  
+🔸 PostgreSQL + Prisma  
+🔸 Schema inicial: User e Category  
+🔸 Migrations  
+🔸 Auth (registro + login)  
+🔸 Seeds de categorias  
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+---
 
-### Remote Caching
+## **Sprint 2 — Pedidos**  
+🔸 Criar pedidos  
+🔸 Upload de imagens  
+🔸 Listagens do cliente  
+🔸 Filtros básicos  
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+---
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## **Sprint 3 — Prestadores & Pré-Orçamentos**  
+🔸 Onboarding do prestador  
+🔸 Configurar categorias e raio  
+🔸 Tela estilo "Tinder" para pré-orçamentos  
+🔸 Envio de pré-orçamento  
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+---
 
-```
-cd my-turborepo
+## **Sprint 4 — Propostas & Jobs**  
+🔸 Envio de proposta completa  
+🔸 Aceite do cliente  
+🔸 Criação do job  
+🔸 Mudança de status (workflow)
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
+---
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
+## **Sprint 5 — Chat & Acompanhamento**  
+🔸 Chat básico cliente ↔ prestador  
+🔸 Histórico  
+🔸 Notificações locais (MVP)
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+---
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+## **Sprint 6 — Avaliações & Ranking**  
+🔸 Avaliação do prestador  
+🔸 Ranking global  
+🔸 Ordenação por score
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
+---
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
+## **Sprint 7 — Deploy**  
+🔸 API na Railway/Fly.io  
+🔸 Web na Vercel  
+🔸 Banco na Neon  
+🔸 Variáveis de ambiente  
+🔸 Testes finais
 
-## Useful Links
+---
 
-Learn more about the power of Turborepo:
+# ▶️ Como Rodar Localmente
 
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+### 1️⃣ Instalar dependências
+```bash
+pnpm install
+2️⃣ Rodar API
+bash
+Copiar código
+cd apps/api
+pnpm dev
+3️⃣ Rodar Web
+bash
+Copiar código
+cd apps/web
+pnpm dev
+4️⃣ Configurar Banco
+Criar arquivo .env na pasta api:
+
+ini
+Copiar código
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/agente_busca"
+Rodar migração:
+
+bash
+Copiar código
+pnpm dlx prisma migrate dev
+🤝 Contribuindo
+Contribuições são bem-vindas!
+
+Fork o repositório
+
+Crie uma branch: feature/minha-ideia
+
+Commit suas mudanças
+
+Abra um Pull Request
+
+📜 Licença
+Este projeto está sob a licença MIT — uso livre para estudo e evolução da comunidade.
+
+⭐ Apoie o Projeto
+Se gostou da ideia, deixe uma ⭐ no repositório e acompanhe as próximas sprints!
+
+md
+Copiar código
+Desenvolvido com ❤️ por Roger Reis (@rogerreistec)
+yaml
+Copiar código
