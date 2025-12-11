@@ -72,7 +72,7 @@ Inspirado em modelos como **OLX**, **GetNinjas** e **Uber**, o Agente Busca traz
 ### **Infra & DevOps**
 - Turborepo (monorepo)  
 - pnpm  
-- Docker  
+- Docker (PostgreSQL e serviços)  
 - GitHub Actions  
 - SSH Keys + Versionamento  
 
@@ -93,6 +93,7 @@ agente-busca/
 ├── assets/
 │ └── logo-agente-busca.png
 ├── turbo.json
+├── package.json
 └── README.md
 
 yaml
@@ -180,7 +181,7 @@ Copiar código
 cd apps/web
 pnpm dev
 4️⃣ Configurar Banco
-Crie o arquivo .env na pasta api:
+Crie o arquivo .env na pasta apps/api:
 
 ini
 Copiar código
@@ -189,7 +190,7 @@ Rodar migração:
 
 bash
 Copiar código
-pnpm dlx prisma migrate dev
+pnpm prisma:migrate
 🤝 Contribuindo
 Fork o repositório
 
