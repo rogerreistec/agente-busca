@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/logo-agente-busca.png" width="320" alt="Logo Agente Busca" />
+</p>
+
 # 🧑‍🔧 Agente Busca — Super App de Serviços
 
 O **Agente Busca** é um super aplicativo projetado para conectar **clientes** a **prestadores de serviço** de forma rápida, inteligente e intuitiva.  
@@ -68,7 +72,7 @@ Inspirado em modelos como **OLX**, **GetNinjas** e **Uber**, o Agente Busca traz
 ### **Infra & DevOps**
 - Turborepo (monorepo)  
 - pnpm  
-- Docker (PostgreSQL e serviços)  
+- Docker  
 - GitHub Actions  
 - SSH Keys + Versionamento  
 
@@ -86,7 +90,9 @@ agente-busca/
 │ └── config/ → ESLint, Tailwind, TS configs
 ├── infra/
 │ └── docker/ → Banco, redis (futuro)
-├── turbo.json → Configuração Turborepo
+├── assets/
+│ └── logo-agente-busca.png
+├── turbo.json
 └── README.md
 
 yaml
@@ -94,32 +100,18 @@ Copiar código
 
 ---
 
-## 🗂️ Categorias do Sistema (versão inicial)
+## 📅 Roadmap Oficial (Sprints)
 
-- 🏗️ Construção e Reforma  
-- 🔌 Eletrônicos e TI  
-- 🧹 Casa e Serviços Gerais  
-- 💅 Beleza e Saúde  
-- 🚗 Automotivo  
-- 🎉 Eventos  
-- 🐕 Pets  
-- 📚 Aulas e Consultorias  
-- 🔧 Outros  
-
----
-
-# 📅 Roadmap Oficial (Sprints)
-
-## **Sprint 0 — OK**  
+### **Sprint 0 — OK**
 ✔️ Ambiente Linux + VSCode  
 ✔️ Git + SSH + GitHub  
 ✔️ Turborepo configurado  
 ✔️ API e Web rodando  
-✔️ Copilot funcionando
+✔️ Copilot funcionando  
 
 ---
 
-## **Sprint 1 — Backend Base (Semana Atual)**  
+### **Sprint 1 — Backend Base (Atual)**
 🔸 PostgreSQL + Prisma  
 🔸 Schema inicial: User e Category  
 🔸 Migrations  
@@ -128,7 +120,7 @@ Copiar código
 
 ---
 
-## **Sprint 2 — Pedidos**  
+### **Sprint 2 — Pedidos**
 🔸 Criar pedidos  
 🔸 Upload de imagens  
 🔸 Listagens do cliente  
@@ -136,46 +128,43 @@ Copiar código
 
 ---
 
-## **Sprint 3 — Prestadores & Pré-Orçamentos**  
+### **Sprint 3 — Prestadores & Pré-Orçamentos**
 🔸 Onboarding do prestador  
-🔸 Configurar categorias e raio  
-🔸 Tela estilo "Tinder" para pré-orçamentos  
-🔸 Envio de pré-orçamento  
+🔸 Cadastro de categorias  
+🔸 Pré-orçamento estilo "Tinder"  
 
 ---
 
-## **Sprint 4 — Propostas & Jobs**  
-🔸 Envio de proposta completa  
-🔸 Aceite do cliente  
-🔸 Criação do job  
-🔸 Mudança de status (workflow)
-
----
-
-## **Sprint 5 — Chat & Acompanhamento**  
-🔸 Chat básico cliente ↔ prestador  
+### **Sprint 4 — Propostas & Jobs**
+🔸 Proposta completa  
+🔸 Workflow de job  
 🔸 Histórico  
-🔸 Notificações locais (MVP)
 
 ---
 
-## **Sprint 6 — Avaliações & Ranking**  
-🔸 Avaliação do prestador  
+### **Sprint 5 — Chat & Acompanhamento**
+🔸 Chat básico  
+🔸 Notificações locais (MVP)  
+
+---
+
+### **Sprint 6 — Avaliações & Ranking**
+🔸 Avaliação  
 🔸 Ranking global  
-🔸 Ordenação por score
+🔸 Ordenação por score  
 
 ---
 
-## **Sprint 7 — Deploy**  
+### **Sprint 7 — Deploy**
 🔸 API na Railway/Fly.io  
 🔸 Web na Vercel  
 🔸 Banco na Neon  
-🔸 Variáveis de ambiente  
-🔸 Testes finais
+🔸 Env configs  
+🔸 Testes finais  
 
 ---
 
-# ▶️ Como Rodar Localmente
+## ▶️ Como Rodar Localmente
 
 ### 1️⃣ Instalar dependências
 ```bash
@@ -191,7 +180,7 @@ Copiar código
 cd apps/web
 pnpm dev
 4️⃣ Configurar Banco
-Criar arquivo .env na pasta api:
+Crie o arquivo .env na pasta api:
 
 ini
 Copiar código
@@ -202,8 +191,6 @@ bash
 Copiar código
 pnpm dlx prisma migrate dev
 🤝 Contribuindo
-Contribuições são bem-vindas!
-
 Fork o repositório
 
 Crie uma branch: feature/minha-ideia
@@ -213,13 +200,6 @@ Commit suas mudanças
 Abra um Pull Request
 
 📜 Licença
-Este projeto está sob a licença MIT — uso livre para estudo e evolução da comunidade.
+MIT — Livre para uso e modificação.
 
-⭐ Apoie o Projeto
-Se gostou da ideia, deixe uma ⭐ no repositório e acompanhe as próximas sprints!
-
-md
-Copiar código
-Desenvolvido com ❤️ por Roger Reis (@rogerreistec)
-yaml
-Copiar código
+<p align="center"> Desenvolvido com ❤️ por <strong>Roger Reis</strong> </p> ```
